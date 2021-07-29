@@ -16,7 +16,7 @@ export class CustomerService {
   }
 
   createCustomer(customer: Customer): void {
-    this.customersRef.add({...customer});
+    this.customersRef.add({ ...customer });
   }
 
   updateCustomer(key: string, value: any): Promise<void> {

@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 
 export class AuthenticationService {
-  userData: Observable<firebase.User>;
+  userData: Observable<any>;
 
   constructor(private angularFireAuth: AngularFireAuth) {
     this.userData = angularFireAuth.authState;
@@ -23,7 +23,7 @@ export class AuthenticationService {
       })
       .catch(error => {
         console.log('Something is wrong:', error.message);
-      });    
+      });
   }
 
   /* Sign in */
@@ -35,7 +35,7 @@ export class AuthenticationService {
         console.log('Successfully signed in!');
       })
       .catch(err => {
-        console.log('Something is wrong:',err.message);
+        console.log('Something is wrong:', err.message);
       });
   }
 
@@ -44,6 +44,6 @@ export class AuthenticationService {
     this.angularFireAuth
       .auth
       .signOut();
-  }  
+  }
 
 }
